@@ -1,2 +1,2 @@
 # Data-structuers-Algorithms
-implementation of Data structuers&amp; Algorithms
+implementation of some Data structuers&amp; Algorithms
