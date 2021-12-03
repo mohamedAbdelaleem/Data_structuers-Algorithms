@@ -2,26 +2,26 @@ class MyHashSet:
     
     def __init__(self):
         
-        self.keys = []
+        self.keys = [[]] * 10
 
         
     def add(self, key: int):
         
-        if key in self.keys:
+        if key in self.keys[int(key%10)]:
             pass
         else:
-            self.keys.append(key)
+            self.keys[int(key%10)].append(key)
 
             
     def remove(self, key: int):
         
-        if key in self.keys:
-            self.keys.remove(key)
+        if key in self.keys[int(key%10)]:
+            self.keys[int(key%10)].remove(key)
 
             
     def contains(self, key: int):
         
-        out = key in self.keys
+        out = key in self.keys[int(key%10)]
         return out
         
 
@@ -31,3 +31,4 @@ obj.add(12)
 obj.remove(12)
 is_contain = obj.contains(12)
 print(is_contain)
+
