@@ -7,7 +7,7 @@ class MyCircularQueue:
         self.tail = -1
         self.length = 0
 
-    def en_queue(self, value: int) -> bool:
+    def en_queue(self, value: int):
         """ Add an element to the queue 'after the current tail' """
         if self.length < self.k:
             if self.head == -1:
@@ -23,7 +23,7 @@ class MyCircularQueue:
         else:
             return False
 
-    def de_eueue(self) -> bool:
+    def de_eueue(self):
         """ delete an element from the queue 'the current head' """
         if self.length ==0 :
             return False
@@ -41,7 +41,7 @@ class MyCircularQueue:
             return True
                 
 
-    def front(self) -> int:
+    def front(self):
         """ return the head """
         if self.queue[self.head]:
             return self.queue[self.head]
@@ -50,7 +50,7 @@ class MyCircularQueue:
         else:
             return -1
 
-    def rear(self) -> int:
+    def rear(self):
         """ return the tail """
         if self.queue[self.tail]:
             return self.queue[self.tail]
@@ -59,13 +59,13 @@ class MyCircularQueue:
         else:
             return -1
 
-    def is_empty(self) -> bool:
+    def is_empty(self):
         if self.length == 0:
             return True
         else:
             return False
 
-    def is_full(self) -> bool:
+    def is_full(self):
         if self.length == self.k:
             return True
         else:
