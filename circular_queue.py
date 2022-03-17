@@ -12,8 +12,8 @@ class MyCircularQueue:
         if self.length < self.k:
             if self.head == -1:
                 self.head += 1
-            if self.tail == (self.k)-1:
-                self.tail = 0
+            if self.tail == (self.k)-1:    # if the current tail is the last element so the index 0 should be 
+                self.tail = 0              # None to put the new element in.... "circular queue"
             else:
                 self.tail += 1
             self.queue[self.tail] = value
