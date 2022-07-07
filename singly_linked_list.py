@@ -44,7 +44,7 @@ class MyLinkedList(object):
         """
         new_node = Node(val)
         if self.length == 0:
-            self.addAtHead(val)
+            self.add_at_head(val)
         else:
             self.tail.next = new_node
             self.tail = new_node
@@ -54,14 +54,13 @@ class MyLinkedList(object):
         """
         add a node in a specific index
         """
-        if index == (self.length):
-            self.add_at_tail(val)
-        elif index == 0:
+        if index == 0:
             self.add_at_head(val)
+        elif index == self.length:
+            self.add_at_tail(val)
         elif 0 < index < self.length:
             
             new_node = Node(val)
-
             prev = self.head
             for i in range(index-1):
                 prev = prev.next
@@ -70,6 +69,7 @@ class MyLinkedList(object):
             prev.next = new_node
             new_node.next = next_node
             self.length += 1
+
         
 
     def delete_at_index(self, index):
