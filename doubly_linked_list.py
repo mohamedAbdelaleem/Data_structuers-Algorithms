@@ -12,11 +12,28 @@ class MyLinkedList(object):
         self.tail = None
         self.length = 0
 
+
+    def get_index(self,val):
+        index = 0
+        founded = False
+        curr = self.head
+        while curr:
+            if curr.val == val:
+                founded = True
+                break
+            index += 1
+            curr = curr.next
+
+        if not founded:
+            return -1
+        return index
+
+
     def get(self, index):
         """
         return the value of the needed node
         """ 
-        if index >= self.length:
+        if index >= self.length or index < 0:
             return -1
         curr_node = self.head
         for i in range(index):
@@ -103,10 +120,11 @@ class MyLinkedList(object):
         
 
 
-obj = MyLinkedList()
-obj.add_at_head(12)
-obj.add_at_tail(6)
-obj.add_at_index(2,5)
-obj.delete_at_index(1)
-print(obj.get(0))
-print(obj.get(1))
+if __name__ == "__main__":
+    obj = MyLinkedList()
+    obj.add_at_head(12)
+    obj.add_at_tail(6)
+    obj.add_at_index(2,5)
+    obj.delete_at_index(1)
+    print(obj.get(0))
+    print(obj.get(1))

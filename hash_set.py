@@ -7,21 +7,21 @@ class MyHashSet:
         
     def add(self, key: int):
         
-        if key in self.keys[int(key%10)]:
+        if key in self.keys[key%10]:
             pass
         else:
-            self.keys[int(key%10)].append(key)
+            self.keys[key%10].append(key)
 
             
     def remove(self, key: int):
         
-        if key in self.keys[int(key%10)]:
-            self.keys[int(key%10)].remove(key)
+        if key in self.keys[key%10]:
+            self.keys[key%10].remove(key)
 
             
     def contains(self, key: int):
         
-        out = key in self.keys[int(key%10)]
+        out = key in self.keys[key%10]
         return out
         
 
