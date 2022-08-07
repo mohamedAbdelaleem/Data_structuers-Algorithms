@@ -12,8 +12,8 @@ class MyCircularQueue:
         if self.length < self.k:
             if self.head == -1:
                 self.head += 1
-            if self.tail == (self.k)-1:    # if the current tail is the last element so the index 0 should be 
-                self.tail = 0              # None to put the new element in.... "circular queue"
+            if self.tail == (self.k)-1:    # if the current tail is the last element then the next element should be assigned to index 0
+                self.tail = 0              
             else:
                 self.tail += 1
             self.queue[self.tail] = value
@@ -25,7 +25,7 @@ class MyCircularQueue:
 
     def de_eueue(self):
         """ delete an element from the queue 'the current head' """
-        if self.length ==0 :
+        if self.is_empty() :
             return False
         else:
             self.queue[self.head] = None
@@ -43,33 +43,21 @@ class MyCircularQueue:
 
     def front(self):
         """ return the head """
-        if self.queue[self.head]:
-            return self.queue[self.head]
-        elif self.queue[self.head] == 0:
-            return 0
-        else:
+        if self.is_empty():
             return -1
+        return self.queue[self.head]
 
     def rear(self):
         """ return the tail """
-        if self.queue[self.tail]:
-            return self.queue[self.tail]
-        elif self.queue[self.tail] == 0:
-            return 0
-        else:
+        if self.is_empty():
             return -1
+        return self.queue[self.tail]
 
     def is_empty(self):
-        if self.length == 0:
-            return True
-        else:
-            return False
+        return self.length == 0
 
     def is_full(self):
-        if self.length == self.k:
-            return True
-        else:
-            return False
+        return self.length == self.k
 
 
 obj = MyCircularQueue(3)

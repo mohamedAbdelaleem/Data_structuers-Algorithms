@@ -4,7 +4,7 @@ class Node:
         self.val = val
         self.next = None
 
-class MyLinkedList(object):
+class MyLinkedList:
 
     def __init__(self):
         self.head = None
@@ -95,11 +95,12 @@ class MyLinkedList(object):
             self.length -= 1        
 
 
-obj = MyLinkedList()
-obj.add_at_head(23)
-obj.add_at_tail(6)
-obj.add_at_index(1,5)
-obj.delete_at_index(0)
+if __name__ == "__main__":
+    obj = MyLinkedList()
+    obj.add_at_head(23)
+    obj.add_at_tail(6)
+    obj.add_at_index(1,5)
+    obj.delete_at_index(0)
 
-print(obj.get(0))
-print(obj.get(1))
+    print(obj.get(0))
+    print(obj.get(1))
